@@ -15,7 +15,6 @@ body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
   background-color: #222;
-  /* background-color: #60b347; */
 }
 
 /* LAYOUT */
@@ -116,4 +115,63 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  header {
+    height: 20vh;
+  }
+
+  main {
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left,
+  .right {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .number {
+    font-size: 4rem;
+    width: 10rem;
+    padding: 2rem 0rem;
+  }
+
+  .between {
+    font-size: 1.2rem;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .again {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .guess {
+    font-size: 3rem;
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .message {
+    margin-bottom: 5rem;
+    height: 2.5rem;
+  }
+
+  .label-score {
+    margin-bottom: 1.5rem;
+  }
 }

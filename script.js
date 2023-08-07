@@ -12,8 +12,8 @@ console.log(document.querySelector('.guess').value);
 */
 'use strict';
 let highscore=0;
-const secretNumber = Math.trunc(Math.random() * 20)+1;
-let score = 20;
+let secretNumber = Math.trunc(Math.random() * 20)+1;
+let score = 10;
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
@@ -26,6 +26,11 @@ document.querySelector('.check').addEventListener('click', function () {
 if(!guess){
   document.querySelector('.message').textContent = 'No number!';
 } 
+//when input out of range
+else if(guess>20 || guess<1)
+{
+  document.querySelector('.message').textContent = 'Out of Range!';
+}
 //when player wins
 else if(guess===secretNumber){
 
@@ -44,13 +49,13 @@ else if(guess!==secretNumber){
       document.querySelector('.message').textContent = 'Too Low!';
     }  
     else{
-      document.querySelector('.message').textContent = 'Too High';
+      document.querySelector('.message').textContent = 'Too High!';
     }  
     score--;
     document.querySelector('.score').textContent=score;
       }
     else{
-      document.querySelector('.message').textContent= 'you lost';
+      document.querySelector('.message').textContent= 'You Lost Buddy';
       document.querySelector('.score').textContent=0;
     }
 }
@@ -78,8 +83,8 @@ else{
   }
 }*/ 
 document.querySelector('.again').addEventListener('click', function(){
-  score=20;
-  const secretNumber = Math.trunc(Math.random() * 20)+1;
+  score=10;
+  secretNumber = Math.trunc(Math.random() * 20)+1;
   document.querySelector('.message').textContent = 'Start Guessing';
   document.querySelector('.score').textContent=score;
   document.querySelector('.number').textContent = '?';
